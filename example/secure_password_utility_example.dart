@@ -2,8 +2,8 @@ import 'package:secure_password_utility/secure_password_utility.dart';
 
 void main() {
   checkPasswordStrength('#sh0klmNZa',10);
-  createPassword(14);
-  createProductKey(20);
+  //createPassword(14);
+  //createProductKey(20);
 }
 
 //Check the strength of your password. It returns a boolean
