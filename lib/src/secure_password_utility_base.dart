@@ -10,7 +10,7 @@ class SecurePasswordGateway {
     return strongPasswordGenerator(passwordLength);
   }
 
-  String generateProductKey(int passwordLength) {
-    return productKeyGenerator(passwordLength);
+  String generateProductKey(int passcodeLength) {
+    return productKeyGenerator(passcodeLength);
   }
 }
