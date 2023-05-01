@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:secure_password_utility/secure_password_utility.dart';
 import 'package:test/test.dart';
 
