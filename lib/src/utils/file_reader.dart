@@ -7,6 +7,5 @@ bool findWeakPasswords(String receivedPassword) {
             passwordStatus = true;
         }
     });
-    // print ('received password status is  $passwordStatus');
     return passwordStatus;
 }

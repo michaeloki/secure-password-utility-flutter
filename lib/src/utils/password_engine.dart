@@ -134,7 +134,7 @@ String productKeyGenerator(int productKeyLength) {
     if ((productKeyLength >= 16 &&
         productKeyLength <= 100) &&
         (productKeyLength % 4 == 0 || productKeyLength % 5 == 0)) {
-      const alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456890';// alphaNumeric
+      const alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456890';
       for (var i = 0; i < productKeyLength; i++) {
         generatedProductKey += alphaNumeric[Random().nextInt(alphaNumeric.length)];
       }
