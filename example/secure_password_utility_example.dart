@@ -1,24 +1,34 @@
 import 'package:secure_password_utility/secure_password_utility.dart';
 
 void main() {
-  // SecurePasswordGateway().checkWeakPassword('@sh0klmNZa',10).then((e) => {
-  //   print('Strong password is $e')
-  // });
-
-  // createPassword();
-  // createProductKey(20);
+  checkPasswordStrength('#sh0klmNZa',10);
+  createPassword(14);
+  createProductKey(20);
 }
 
+//Check the strength of your password. It returns a boolean
+Future<bool> checkPasswordStrength(String password, int passwordLength) async {
+  var passcodeStrength = false;
+  await SecurePasswordGateway().checkWeakPassword(password,passwordLength)
+  .then((value) => {
+    passcodeStrength = value
+  });
+  print('Strong password is $passcodeStrength');
+  return passcodeStrength;
+}
 
-Future<dynamic> createPassword() async {
+//Create a new password with a certain length
+Future<dynamic> createPassword(int passwordLength) async {
   var createdPassword = '';
-  var passwd = SecurePasswordGateway().generateStrongPassword(14);
-  await passwd.then((value) => createdPassword = value);
+  await SecurePasswordGateway().generateStrongPassword(passwordLength)
+      .then((value) => createdPassword = value);
   print('generated strong password is $createdPassword');
+  return createdPassword;
 }
 
-String createProductKey(int passwordLength) {
-  var res = SecurePasswordGateway().generateProductKey(passwordLength);
+
+String createProductKey(int productKeyLength) {
+  var res = SecurePasswordGateway().generateProductKey(productKeyLength);
   print('PRODUCT KEY IS::::: $res');
   return res;
 }
