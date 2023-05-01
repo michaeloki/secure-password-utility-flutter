@@ -1,0 +1,15 @@
+const dictionary_file_location = './dictionary.dart';
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const allNumbers = '0123456789';
+const allCharacters = '#\$!@&%+=?';
+//const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456890';
+// double MoneyFormati() {
+//   return 2.5;
+// }
+//
+// extension MoneyFormat on double {
+//   String formatMoney() {
+//     return '$this USD';
+//   }
+//}
