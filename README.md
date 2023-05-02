@@ -1,7 +1,5 @@
 This password utility encourages the use of strong passwords in flutter apps.
 
-To install this package, run npm i secure-password-utility.
-
 When you call WeakPasswordChecker you will get a boolean value.
 
 Weak passwords like password123 or common words will also return false.
