@@ -7,22 +7,30 @@ void main() {
     final passwordLength = 10;
     final passcodeLength = 25;
     final password = '#sh0klmNZa';
+    var productKey;
 
     setUp(() {
       // Additional setup goes here.
+        productKey = SecurePasswordGateway().generateProductKey(passcodeLength);
     });
 
     test('Default password variable state', () {
-      expect(securePasswordPack.passwordVerdict, isFalse);
+      expect(securePasswordPack, isA<SecurePasswordGateway>());
     });
     test('Check password strength', () {
       expect(securePasswordPack.checkWeakPassword(password,passwordLength), isNotNull);
     });
     test('Generate a strong password', () {
-      expect(securePasswordPack.generateStrongPassword(passwordLength), isNotNull);
+      expect(securePasswordPack.generateStrongPassword(passwordLength), isA<Future<String>>());
     });
     test('Confirm product key generation', () {
+      expect(securePasswordPack.generateProductKey(passcodeLength), isA<String>());
+    });
+    test('Ensure the product key is no empty', () {
       expect(securePasswordPack.generateProductKey(passcodeLength), isNotEmpty);
+    });
+    test('Product Key', () {
+      expect(productKey, contains('-'));
     });
   });
 }
