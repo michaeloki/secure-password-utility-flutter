@@ -1,5 +1,4 @@
-const common_passwords =
-[
+const common_passwords = [
   'pass',
   '123',
   'abc',
