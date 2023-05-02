@@ -10,7 +10,6 @@ void main() {
     var productKey;
 
     setUp(() {
-      // Additional setup goes here.
         productKey = SecurePasswordGateway().generateProductKey(passcodeLength);
     });
 
