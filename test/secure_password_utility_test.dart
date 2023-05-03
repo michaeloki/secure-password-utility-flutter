@@ -4,10 +4,9 @@ import 'package:test/test.dart';
 void main() {
   group('A group of tests', () {
     final securePasswordPack = SecurePasswordGateway();
-    final passwordLength = 10;
+    final passwordLength = 20;
     final passcodeLength = 25;
-    final password = 'ZXCVBNMABC';
-    //final password = '#sh0klmNZa';
+    final password = 'KcLDoN2J^Ai#Pvw6SX4@';
     var productKey;
 
     setUp(() {
@@ -18,7 +17,7 @@ void main() {
       expect(securePasswordPack, isA<SecurePasswordGateway>());
     });
     test('Check password strength', () {
-      expect(securePasswordPack.checkWeakPassword(password,passwordLength), isNotNull);
+      expect(securePasswordPack.checkWeakPassword(password,passwordLength), isA<Future<bool>>());
     });
     test('Generate a strong password', () {
       expect(securePasswordPack.generateStrongPassword(passwordLength), isA<Future<String>>());
