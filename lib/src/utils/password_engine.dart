@@ -16,11 +16,12 @@ Future<bool> weakPasswordChecker(String rawPassword, int passwordLength) async {
               'SecurePasswordUtility::: password length is too short or password length mismatch');
           return !status;
         } else {
-          if (findWeakPasswords(rawPassword)) {
+          var passwordStatus = true;
+          await findWeakPasswords(rawPassword)
+              .then((response) => passwordStatus = response);
+          if (passwordStatus == true) {
             status = false;
-          }
-
-          if (status) {
+          } else {
             var pattern = RegExp(
                 '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#\$%^&*.,?]).+\$');
             if (pattern.firstMatch(rawPassword) != null) {

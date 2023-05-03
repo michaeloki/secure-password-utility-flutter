@@ -1,7 +1,7 @@
 import 'package:secure_password_utility/secure_password_utility.dart';
 
 void main() {
-  checkPasswordStrength('KcLDoN2J^Ai#Pvw6SX4@', 20);
+  checkPasswordStrength('bt9XD8aJC@&37^P!CJR*s6', 22);
   //createPassword(14);
   //createProductKey(20);
 }

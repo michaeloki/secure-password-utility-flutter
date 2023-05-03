@@ -1,16 +1,24 @@
 import 'dart:io';
-import 'dart:convert';
 import '../constants.dart';
 
-bool findWeakPasswords(String receivedPassword) {
-  var passwordStatus = false;
-  File(filePath)
-      .openRead()
-      .transform(utf8.decoder)
-      .transform(LineSplitter())
-      .forEach((text) => {
-            if (text.toLowerCase().contains(receivedPassword.toLowerCase()))
-              {passwordStatus = true}
-          });
+var passwordStatus = false;
+var receivedPassword = '';
+Future<bool> findWeakPasswords(String rawPassword) async {
+  receivedPassword = rawPassword;
+  await readJsonFile(filePath, receivedPassword);
+  return passwordStatus;
+}
+
+Future<bool> readJsonFile(String filePath, String password) async {
+  var input = await File(filePath).readAsLines();
+  input.forEach((value) => {
+        if (password
+                .toLowerCase()
+                .trim()
+                .contains(value.toLowerCase().trim()) &&
+            value.length >= 3)
+          {passwordStatus = true}
+      });
+
   return passwordStatus;
 }

@@ -4,3 +4,4 @@ const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const allNumbers = '0123456789';
 const allCharacters = '#\$!@&%+=?';
 const filePath = 'lib/assets/passwds.txt';
+const jsonFilePath = 'lib/assets/passwds.json';
