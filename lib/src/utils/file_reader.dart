@@ -8,13 +8,13 @@ Future<bool> findWeakPasswords(String rawPassword) async {
   //await readJsonFile(filePath, receivedPassword);
   var input = await File(filePath).readAsLines();
   input.forEach((value) => {
-    if (rawPassword
-        .toLowerCase()
-        .trim()
-        .contains(value.toLowerCase().trim()) &&
-        value.length >= 3)
-      {passwordStatus = true}
-  });
+        if (rawPassword
+                .toLowerCase()
+                .trim()
+                .contains(value.toLowerCase().trim()) &&
+            value.length >= 3)
+          {passwordStatus = true}
+      });
   return passwordStatus;
 }
 
