@@ -17,13 +17,13 @@ import 'package:secure_password_utility/secure_password_utility.dart';
 
 main() {
   // Call these methods separately in your Flutter application
-  checkPasswordStrength('#sh0klmNZa',10);
+  checkPasswordStrength('#sh0klmNZaDf',12);
   createPassword(14);
   createProductKey(20);
 }
 
-// Validate password strength Syntax: securePasswordUtility.WeakPasswordChecker('yourSamplePassword',lengthOfPasswordString);
-// N.B. Ensure the length of the password you want to validate is at least 10-characters long.
+// Validate password strength Syntax: SecurePasswordGateway.checkWeakPassword('yourSamplePassword',lengthOfPasswordString);
+// N.B. Ensure the length of the password you want to validate is at least 12-characters long.
 //Check the strength of your password. It returns a boolean
 Future<bool> checkPasswordStrength(String password, int passwordLength) async {
   var passcodeStrength = false;
@@ -35,7 +35,7 @@ Future<bool> checkPasswordStrength(String password, int passwordLength) async {
   return passcodeStrength;
 }
 
-// Generate a strong password Syntax: securePasswordUtility.CreateStrongPassword(lengthOfPasswordString);
+// Generate a strong password Syntax: SecurePasswordGateway.createPassword(lengthOfPasswordString);
 // N.B. The password length must be more than 12.
 //Create a new password with a certain length
 Future<dynamic> createPassword(int passwordLength) async {

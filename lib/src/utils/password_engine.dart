@@ -12,7 +12,8 @@ Future<bool> weakPasswordChecker(String rawPassword, int passwordLength) async {
     } else {
       try {
         if (!(passwordLength == rawPassword.length && passwordLength >= 10)) {
-          print('SecurePasswordUtility::: password length is too short');
+          print(
+              'SecurePasswordUtility::: password length is too short or password length mismatch');
           return !status;
         } else {
           if (findWeakPasswords(rawPassword)) {

@@ -6,7 +6,8 @@ void main() {
     final securePasswordPack = SecurePasswordGateway();
     final passwordLength = 10;
     final passcodeLength = 25;
-    final password = '#sh0klmNZa';
+    final password = 'ZXCVBNMABC';
+    //final password = '#sh0klmNZa';
     var productKey;
 
     setUp(() {
