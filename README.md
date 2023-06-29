@@ -17,8 +17,8 @@ import 'package:secure_password_utility/secure_password_utility.dart';
 
 main() {
   // Call these methods separately in your Flutter application
-  checkPasswordStrength('#sh0klmNZaDf',12);
-  createPassword(14);
+  checkPasswordStrength('#sh0klmNZaDf',15);
+  createPassword(16);
   createProductKey(20);
 }
 
@@ -36,7 +36,7 @@ Future<bool> checkPasswordStrength(String password, int passwordLength) async {
 }
 
 // Generate a strong password Syntax: SecurePasswordGateway.createPassword(lengthOfPasswordString);
-// N.B. The password length must be more than 12.
+// N.B. The password length must be more than 15.
 //Create a new password with a certain length
 Future<dynamic> createPassword(int passwordLength) async {
   var createdPassword = '';
