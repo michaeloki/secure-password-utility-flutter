@@ -1,6 +1,6 @@
 name: secure_password_utility
 description: This password utility encourages the use of strong passwords in flutter apps.
-version: 1.0.6
+version: 1.0.8
 homepage: https://www.inspiratixhub.com
 repository: https://github.com/michaeloki/secure-password-utility-flutter
 
